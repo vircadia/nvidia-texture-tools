@@ -20,7 +20,7 @@ SET(SQUISH_SRCS
 	simd_sse.h
 	simd_ve.h)
 
-ADD_LIBRARY(squish STATIC ${SQUISH_SRCS})
+ADD_LIBRARY(squish OBJECT ${SQUISH_SRCS})
 
 IF(NOT WIN32)
 

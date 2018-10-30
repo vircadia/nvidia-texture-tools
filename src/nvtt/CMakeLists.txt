@@ -55,9 +55,9 @@ ADD_LIBRARY(nvtt
     $<TARGET_OBJECTS:bc6h>
     $<TARGET_OBJECTS:bc7>
     $<TARGET_OBJECTS:nvmath>
+    $<TARGET_OBJECTS:squish>
+    $<TARGET_OBJECTS:rg_etc1>
 )
-
-target_link_libraries(nvtt squish rg_etc1)
 
 IF(PNG_FOUND)
     SET(LIBS ${LIBS} ${PNG_LIBRARIES})
