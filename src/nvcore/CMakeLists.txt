@@ -25,7 +25,6 @@ IF(UNIX)
 ENDIF(UNIX)
 
 ADD_LIBRARY(nvcore OBJECT ${CORE_SRCS})
-TARGET_LINK_LIBRARIES(nvcore ${LIBS})
 TARGET_INCLUDE_DIRECTORIES(nvcore PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # On NetBSD and FreeBSD backtrace() is provided by libexecinfo, not libc.
