@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------------------
 
 	Copyright (c) 2006 Simon Brown                          si@sjbrown.co.uk
-	Copyright (c) 2008 Ignacio Castano                      castano@gmail.com
+	Copyright (c) 2008 Ignacio Castaño                      castano@gmail.com
 
 	Permission is hereby granted, free of charge, to any person obtaining
 	a copy of this software and associated documentation files (the 

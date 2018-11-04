@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2011 Ignacio Castano <castano@gmail.com>
+// Copyright (c) 2009-2011 Ignacio CastaÃ±o <castano@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -1005,9 +1005,9 @@ void CubeSurface::sky(float turbidity, float albedo[3], float solarElevation) {
 
     // 700 nm (red), 546.1 nm (green) and 435.8 nm (blue).
     float channel_center[3] = {
-        700,    // Red 620–740,
-        546.1,  // Green 520–570,
-        435.8,  // Blue 450–490,
+        700,    // Red 620ï¿½740,
+        546.1,  // Green 520ï¿½570,
+        435.8,  // Blue 450ï¿½490,
     };
 
     // @@ For each pixel:
