@@ -160,6 +160,8 @@ namespace nv
             nvDebugCheck(m_fp != NULL);
 #if NV_OS_WIN32
             return (uint)_fwrite_nolock(data, 1, len, m_fp);
+#elif NV_OS_ANDROID
+            return (uint)fwrite(data, 1, len, m_fp);
 #elif NV_OS_LINUX
             return (uint)fwrite_unlocked(data, 1, len, m_fp);
 #elif NV_OS_DARWIN
@@ -210,6 +212,8 @@ namespace nv
             nvDebugCheck(m_fp != NULL);
 #if NV_OS_WIN32
             return (uint)_fread_nolock(data, 1, len, m_fp);
+#elif NV_OS_ANDROID
+            return (uint)fread(data, 1, len, m_fp);
 #elif NV_OS_LINUX
             return (uint)fread_unlocked(data, 1, len, m_fp);
 #elif NV_OS_DARWIN

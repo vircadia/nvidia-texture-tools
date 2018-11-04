@@ -6,6 +6,9 @@
 
 #if NV_OS_WIN32
 #include "Win32.h"
+#elif NV_OS_ANDROID
+#include <sys/types.h>
+#include <unistd.h>
 #elif NV_OS_UNIX
 #include <sys/types.h>
 #include <sys/sysctl.h>

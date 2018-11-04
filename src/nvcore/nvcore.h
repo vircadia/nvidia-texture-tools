@@ -76,6 +76,10 @@
 #   error "Unsupported OS"
 #endif
 
+#if defined __ANDROID__
+#   define NV_OS_ANDROID 1
+#endif
+
 
 // Threading:
 // some platforms don't implement __thread or similar for thread-local-storage
