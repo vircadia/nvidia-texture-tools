@@ -125,16 +125,19 @@ ENDIF(CUDA_FOUND)
 #ENDIF(OPENEXR_FOUND)
 
 # OpenMP
-INCLUDE(FindOpenMP)
-IF(OPENMP_FOUND)
-	SET(HAVE_OPENMP ${OPENMP_FOUND} CACHE BOOL "Set to TRUE if OpenMP is found, FALSE otherwise")
-	MESSAGE(STATUS "Looking for OpenMP - found")
-	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-ELSE(OPENMP_FOUND)
-	MESSAGE(STATUS "Looking for OpenMP - not found")
-ENDIF(OPENMP_FOUND)
-	
+if (NOT APPLE)
+    INCLUDE(FindOpenMP)
+    IF(OPENMP_FOUND)
+        SET(HAVE_OPENMP ${OPENMP_FOUND} CACHE BOOL "Set to TRUE if OpenMP is found, FALSE otherwise")
+        MESSAGE(STATUS "Looking for OpenMP - found")
+        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+    ELSE(OPENMP_FOUND)
+        MESSAGE(STATUS "Looking for OpenMP - not found")
+    ENDIF(OPENMP_FOUND)
+endif()
+
+
 # Threads
 FIND_PACKAGE(Threads REQUIRED)
 MESSAGE(STATUS "Use thread library: ${CMAKE_THREAD_LIBS_INIT}")
