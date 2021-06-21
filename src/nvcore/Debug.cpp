@@ -1008,6 +1008,13 @@ void debug::dumpInfo()
 #endif
 }
 
+static va_list getEmptyVAList(va_list list, ...)
+{
+    va_start(list, list);
+    va_end(list);
+    return list;
+}
+
 /// Dump callstack using the specified handler.
 void debug::dumpCallstack(MessageHandler *messageHandler, int callstackLevelsToSkip /*= 0*/)
 {
@@ -1020,8 +1027,11 @@ void debug::dumpCallstack(MessageHandler *messageHandler, int callstackLevelsToS
         Array<const char *> lines;
         writeStackTrace(trace, size, callstackLevelsToSkip + 1, lines);     // + 1 to skip the call to dumpCallstack
 
+        va_list empty;
+        empty = getEmptyVAList(empty);
+
         for (uint i = 0; i < lines.count(); i++) {
-            messageHandler->log(lines[i], NULL);
+            messageHandler->log(lines[i], empty);
             delete lines[i];
         }
     }
