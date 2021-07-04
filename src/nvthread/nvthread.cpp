@@ -27,6 +27,13 @@
 #include <syslog.h>
 #endif
 
+#ifdef __APPLE__
+// This should have been handled above, but apparently Mac OS can
+// build on the NV_OS_UNIX path?
+#include <sys/sysctl.h>
+#endif
+
+
 using namespace nv;
 
 #if NV_OS_WIN32
